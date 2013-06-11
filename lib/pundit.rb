@@ -6,6 +6,7 @@ if ActiveSupport::VERSION::MAJOR >= 3
   require "active_support/core_ext/string/inflections"
   require "active_support/core_ext/object/blank"
 end
+require "pundit/ruby18_support"
 
 module Pundit
   class NotAuthorizedError < StandardError; end
