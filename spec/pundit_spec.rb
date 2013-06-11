@@ -1,7 +1,5 @@
 require "pundit"
 require "pry"
-require "active_support/core_ext"
-require "active_model/naming"
 
 class PostPolicy < Struct.new(:user, :post)
   def update?
@@ -31,7 +29,7 @@ class CommentPolicy::Scope < Struct.new(:user, :scope)
     scope
   end
 end
-class Comment; extend ActiveModel::Naming; end
+class Comment; def model_name; 'Comment'; end; end
 
 class Article; end
 
