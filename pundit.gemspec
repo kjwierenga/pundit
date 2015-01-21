@@ -18,9 +18,15 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "activesupport", ">= 2"
-  gem.add_development_dependency "activerecord", ">= 2"
-  gem.add_development_dependency "rspec", "~>2.0"
-  gem.add_development_dependency "pry"
+
   gem.add_development_dependency "rake"
+  gem.add_development_dependency "activerecord", ">= 2"
+  gem.add_development_dependency "rspec", "~> 2.0"
   gem.add_development_dependency "yard"
+
+  if RUBY_VERSION =~ /1\.8/
+    gem.add_development_dependency "pry",   "~> 0.9.12"
+  else
+    gem.add_development_dependency "pry"
+  end
 end
